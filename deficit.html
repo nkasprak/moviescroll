@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="og:image" content="http://www.cbpp.org/images/loops/income_gains_diverge/2012.png" />
+<meta property="twitter:title" content="Income Gains Widely Shared in Early Postward Decades - But Not Since Then" />
+<meta property="twitter:description" content="An animated graph from the Center on Budget and Policy Priorities" />
+<meta property="twitter:image" content="http://www.cbpp.org/images/loops/income_gains_diverge/2012.png" />
+<title>Income Gains Widely Shared in Early Postward Decades - But Not Since Then</title>
+<link rel="stylesheet" href="chartLooper.css" />
+</head>
+
+<body>
+<div id="deficit_gif"></div>
+
+<script src="jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="bindfix.js" type="text/javascript"></script>
+<script src="chartLooper.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(window).load(function () {
+	
+	jQueryChartLoopers.init(function() {
+		try {
+			ops = {
+				looperName:"deficit", 
+				locationRoot:"deficit",
+				arrayOfFileNames:[	"1.png",
+									"2.png",
+									"3.png",
+									"4.png",
+									"5.png",	
+									"6.png",
+									"7.png"
+									],
+				defaultChangeTime: 1600, 
+				fadeLength: 100, 
+				startFrame: 0, 
+				divID: "deficit_gif", 
+				width: 476, 
+				height:289, 
+				playOnStart: false
+			}
+			
+			jQueryChartLoopers["deficit"] = new jQueryChartLoopers.jQueryChartLooper(ops);
+			jQueryChartLoopers["deficit"].drawNewFrame(false);
+		} catch (ex) {
+			console.log(ex);	
+		}
+	});
+});
+
+</script>
+</body>
+</html>

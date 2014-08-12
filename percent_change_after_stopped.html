@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="og:image" content="http://www.cbpp.org/images/loops/percent_change_aftertax/2010.png" />
+<meta property="twitter:title" content="Income Gains Since 1979 of the Top 1 Percent Dwarf Those of Other Households" />
+<meta property="twitter:description" content="An animated graph from the Center on Budget and Policy Priorities" />
+<meta property="twitter:image" content="http://www.cbpp.org/images/loops/percent_change_aftertax/2010.png" />
+<title>Income Gains Since 1979 of the Top 1 Percent Dwarf Those of Other Households</title>
+<link rel="stylesheet" href="chartLooper.css" />
+</head>
+
+<body>
+<div id="income_diverge_gif"></div>
+
+<script src="jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="bindfix.js" type="text/javascript"></script>
+<script src="chartLooper.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(window).load(function () {
+	
+	fileNameArr = [];
+	for (var year = 1979;year<=2010;year++) {
+		fileNameArr.push(year + ".png");	
+	}
+	fileNameArr.push(["final_frame.png",16000,2000]);
+	
+	jQueryChartLoopers.init(function() {
+		try {
+			ops = {
+				looperName:"percent_change", 
+				locationRoot:"percent_change_aftertax",
+				arrayOfFileNames: fileNameArr,
+				defaultChangeTime: 800, 
+				fadeLength: 100, 
+				startFrame: 0, 
+				divID: "income_diverge_gif", 
+				width: 450, 
+				height:487, 
+				playOnStart: false
+			}
+			jQueryChartLoopers["percent_change"] = new jQueryChartLoopers.jQueryChartLooper(ops);
+			jQueryChartLoopers["percent_change"].drawNewFrame(false);
+		} catch (ex) {
+			console.log(ex);	
+		}
+	});
+});
+
+</script>
+</body>
+</html>

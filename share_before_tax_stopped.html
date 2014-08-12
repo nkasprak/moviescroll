@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="og:image" content="http://www.cbpp.org/images/loops/share_before_tax/2012.png" />
+<meta property="twitter:title" content='Income Concentration at the Top Has Return to Levels of the "Roaring ''20s' />
+<meta property="twitter:description" content="An animated graph from the Center on Budget and Policy Priorities" />
+<meta property="twitter:image" content="http://www.cbpp.org/images/loops/income_gains_diverge/2012.png" />
+<title>Income Concentration at the Top Has Return to Levels of the "Roaring '20s"</title>
+<link rel="stylesheet" href="chartLooper.css" />
+</head>
+
+<body>
+<div id="share_before_gif"></div>
+
+<script src="jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="bindfix.js" type="text/javascript"></script>
+<script src="chartLooper.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(window).load(function () {
+	
+	jQueryChartLoopers.init(function() {
+		try {
+			ops = {
+				looperName:"share_before_tax", 
+				locationRoot:"share_before_tax",
+				arrayOfFileNames: [	"1928.png",
+									"1929.png",
+									"1930s.png",
+									"1940s.png",
+									"1950s.png",	
+									"1960s.png",
+									"1970s.png",
+									"1980s.png",
+									"1990s.png",
+									"2000s.png",
+									"2010.png",
+									"2011.png",
+									"2012.png"],
+				defaultChangeTime: 800, 
+				fadeLength: 100, 
+				startFrame: 0, 
+				divID: "share_before_gif", 
+				width: 338, 
+				height:401, 
+				playOnStart: false
+			}
+			jQueryChartLoopers["share_before_tax"] = new jQueryChartLoopers.jQueryChartLooper(ops);
+			jQueryChartLoopers["share_before_tax"].drawNewFrame(false);
+		} catch (ex) {
+			console.log(ex);	
+		}
+	});
+});
+
+</script>
+</body>
+</html>

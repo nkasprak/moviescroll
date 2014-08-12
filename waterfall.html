@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="og:image" content="http://www.offthechartsblog.org/wp-content/uploads/2014/3-17-14bud/waterfall/Waterfall_interactive_B_06_Blog.png" />
+<meta property="twitter:title" content="Deficit Picture Has Improved Significantly" />
+<meta property="twitter:description" content="An animated graph from the Center on Budget and Policy Priorities" />
+<meta property="twitter:image" content="http://www.offthechartsblog.org/wp-content/uploads/2014/3-17-14bud/waterfall/Waterfall_interactive_B_06_Blog.png" />
+<title>Deficit Picture Has Improved Significantly</title>
+<link rel="stylesheet" href="chartLooper.css" />
+</head>
+
+<body>
+<div id="waterfall_gif"></div>
+
+<script src="jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="bindfix.js" type="text/javascript"></script>
+<script src="chartLooper.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(window).load(function () {
+	
+	fileNameArr = [	"Waterfall_interactive_B_01_Blog.png",
+					"Waterfall_interactive_B_02_Blog.png",
+					"Waterfall_interactive_B_03_Blog.png",
+					"Waterfall_interactive_B_04_Blog.png",
+					"Waterfall_interactive_B_05_Blog.png",
+					"Waterfall_interactive_B_06_Blog.png"];
+	
+	jQueryChartLoopers.init(function() {
+		try {
+			ops = {
+				looperName:"waterfall", 
+				locationRoot:"waterfall",
+				arrayOfFileNames: fileNameArr,
+				defaultChangeTime: 4000, 
+				fadeLength: 400, 
+				startFrame: 5, 
+				divID: "waterfall_gif", 
+				width: 525, 
+				height:387, 
+				playOnStart: false,
+				embedLink: false
+			}
+			jQueryChartLoopers["waterfall"] = new jQueryChartLoopers.jQueryChartLooper(ops);
+			jQueryChartLoopers["waterfall"].drawNewFrame(false);
+		} catch (ex) {
+			console.log(ex);	
+		}
+	});
+});
+
+</script>
+</body>
+</html>
